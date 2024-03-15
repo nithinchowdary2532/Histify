@@ -13,3 +13,4 @@ playsound
 python-dotenv
 langchain-google-genai
 PyPDF2
+gTTS
