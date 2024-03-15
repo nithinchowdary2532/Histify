@@ -4,8 +4,8 @@ import streamlit as st
 from PIL import Image
 import requests
 
-os.environ["REPLICATE_API_TOKEN"] = "r8_LOcsnyZdCzTyRlbr1cmTSNQ8tZg9Vgw0f4KLM"
-api = replicate.Client(api_token=os.environ["REPLICATE_API_TOKEN"])
+REPLICATE_API_TOKEN = os.getenv("REPLICATE_API_TOKEN")
+api = replicate.Client(api_token=REPLICATE_API_TOKEN)
 
 
 def genreate_image(prompt):
