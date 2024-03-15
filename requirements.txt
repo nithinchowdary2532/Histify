@@ -10,3 +10,6 @@ unstructured
 pdf2image
 pdfminer
 playsound
+python-dotenv
+langchain-google-genai
+PyPDF2
