@@ -157,23 +157,30 @@ if uploaded_file is not None:
     if st.button("Get Summary"):
         if not os.path.exists(PDFS_DIR):
             os.makedirs(PDFS_DIR)
-        with open(os.path.join(PDFS_DIR, uploaded_file.name), "wb") as f:
-            f.write(uploaded_file.getvalue())
-        topic = process_pdf(os.path.join(PDFS_DIR, uploaded_file.name))
-        #st.header("Here's a breakdown of all the important information in the uploaded chapter:")
-        chunks = chunk_text(topic)
-        summaries = summarize_chunks(chunks)
-        aggregated_summary = aggregate_summaries(summaries)
-        session_state.data = aggregated_summary
-        #st.write(aggregated_summary)
+        
+        with st.spinner("Processing PDF..."):
+            with open(os.path.join(PDFS_DIR, uploaded_file.name), "wb") as f:
+                f.write(uploaded_file.getvalue())
+
+            topic = process_pdf(os.path.join(PDFS_DIR, uploaded_file.name))
+            #st.header("Here's a breakdown of all the important information in the uploaded chapter:")
+            chunks = chunk_text(topic)
+            summaries = summarize_chunks(chunks)
+            aggregated_summary = aggregate_summaries(summaries)
+            session_state.data = aggregated_summary
+            #st.write(aggregated_summary)
+
+
 
 if len(session_state.data) > 0:
     st.header("Here's a breakdown of all the important information in the uploaded chapter:")
     st.write(session_state.data)
+    st.button("Get Audio", on_click = text_to_speech(session_state.data))
 
 if len(session_state.data) > 0:
     if st.button("Generate Story"):
-        generate_story_with_image(session_state.data)
+        with st.spinner("Generating Story..."):
+            generate_story_with_image(session_state.data)
 
 def export_story_data(story_data):
         data = {"information": story_data}
@@ -184,18 +191,19 @@ def export_story_data(story_data):
         with open("story_data.json", "w") as json_file:
             json.dump(data, json_file)
 
-if subtopic_story_pairs:
+    
+
+if len(subtopic_story_pairs) > 0 :
 
     data = []
     st.header("It's story time!")
+    st.subheader("Check out the carasouel to see the story !!")
     for subtopic, story in subtopic_story_pairs.items():
         subtopic_data = {
             "title": subtopic,
             "text": story,
             "img": ""
         }
-        st.subheader(f"{subtopic}")
-
         if len(story) > 0:
             image = generate_image(story)
             if image:
@@ -205,7 +213,6 @@ if subtopic_story_pairs:
         else:
             continue
         data.append(subtopic_data)
-        st.write(f"{story}")
     export_story_data(data)
         # Generate image for the subtopic here using generate_image function
 
