@@ -191,8 +191,10 @@ if len(session_state.data) > 0:
 
     with open("MainPoints.json", "w") as json_file:
             json.dump(data, json_file)
-    
+
+                
     title = import_title()
+    print(title)
     generate_quiz_data(title)
 
     
