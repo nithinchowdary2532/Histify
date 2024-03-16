@@ -14,8 +14,7 @@
 - [Chat with Us](#Chat-with-Us)
 - [Text2Speech](#Text2Speech)
 - [Quiz](#Quiz)
-- [Authors](#authors)
-- [Show your support](#show-your-support)
+- [Authors](#Authors)
 
 
 ## Dependencies
