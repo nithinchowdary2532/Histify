@@ -11,6 +11,7 @@ import replicate
 from PIL import Image
 import requests
 from gtts import gTTS
+import json
 import time
 from io import BytesIO
 
@@ -174,18 +175,40 @@ if len(session_state.data) > 0:
     if st.button("Generate Story"):
         generate_story_with_image(session_state.data)
 
+def export_story_data(story_data):
+        data = {"information": story_data}
+
+        if os.path.exists("story_data.json"):
+            os.remove("story_data.json")
+
+        with open("story_data.json", "w") as json_file:
+            json.dump(data, json_file)
 
 if subtopic_story_pairs:
+
+    data = []
     st.header("It's story time!")
     for subtopic, story in subtopic_story_pairs.items():
+        subtopic_data = {
+            "title": subtopic,
+            "text": story,
+            "img": ""
+        }
         st.subheader(f"{subtopic}")
 
         if len(story) > 0:
             image = generate_image(story)
             if image:
                 st.image(image)
+
+            subtopic_data["img"] = image[0]
         else:
             continue
-
+        data.append(subtopic_data)
         st.write(f"{story}")
+    export_story_data(data)
         # Generate image for the subtopic here using generate_image function
+
+
+
+st.sidebar.success("Select a page above.")
