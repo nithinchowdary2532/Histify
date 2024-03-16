@@ -6,13 +6,14 @@
 
 ## Table of Contents
 
--[Dependencies](#Dependencies)
--[Setup](#Setup)
--[Project Description](#Project-Description)
+- [Dependencies](#Dependencies)
+- [Setup](#Setup)
+- [Project Description](#Project-Description)
 - [Summarize](#Summarize)
-- [Story Time](#Story Time)
-- [Chat with Us](#Chat with Us)
+- [Story Time](#Story-Time)
+- [Chat with Us](#Chat-with-Us)
 - [Text2Speech](#Text2Speech)
+- [Quiz](#Quiz)
 - [Authors](#authors)
 - [Show your support](#show-your-support)
 
@@ -23,9 +24,15 @@ You'll need a Gemini account, and a Replicate (replicate.com) account.
 
 ## Setup
 
+```
 pip install -r Chat with Us.txt
+```
+```
 pip install --upgrade replicate
+```
+```
 streamlit run app.py
+```
 
 # Project Description
 
@@ -35,6 +42,34 @@ An educational platform uses AI to convert textbook content into narrative-drive
 ![frame_firefox_mac_dark_(1)](https://raw.githubusercontent.com/Megh-Zyke/Histify/main/images/2.jpg)
 ![frame_firefox_mac_dark_(1)](https://raw.githubusercontent.com/Megh-Zyke/Histify/main/images/3.jpg)
 ![frame_firefox_mac_dark_(1)](https://raw.githubusercontent.com/Megh-Zyke/Histify/main/images/4.jpg)
+
+# Summarize
+- Utilizes Gemini to comprehensively analyze educational textbooks.
+- Extracts key points, formulas, and dates, condensing each subtopic into concise summaries.
+- Presents summarized content using text, markdowns, and tables, enhancing accessibility and understanding for students.
+
+# Story Time
+- Utilizes cutting-edge stable diffusion technology, meticulously fine-tuned on summarized educational data.
+- Generates story-like presentations combining images and text from the summarized content.
+- Transforms dense textbook material into engaging and fun stories, aiding comprehension and retention for children with dyslexia or ADHD.
+- Presents the content seamlessly in the form of an image carousel for a visually appealing and immersive experience.
+
+## Chat with Us
+- Utilizes Gemini technology trained on textbook content to power a user-friendly chatbot.
+- Enables students to ask questions pertaining to textbook concepts and receive accurate answers.
+- Incorporates a feature to answer questions even if they are out of the textbook context by leveraging information from the internet.
+
+## Text2Speech
+- Implements Text2Speech functionality to convert displayed information into speech, catering to various learning preferences, particularly for cognitively challenged children.
+- Offers customization options, allowing users to select accents for a personalized learning experience.
+-Enhances the learning process by providing audio support, accommodating diverse learning styles and preferences, including the option to choose accents.
+
+## Quiz
+- Implements a quiz feature to test students on the chapter they have just learned using interactive learning methods.
+- Utilizes multiple-choice questions (MCQs) format with point-based scoring system for each question.
+- Gamifies the self-evaluation process, encouraging students to improve their performance with each attempt and enhancing engagement in the learning process.
+
+
 ## Authors -
 <div align="left"> 
   <table>
@@ -46,12 +81,12 @@ An educational platform uses AI to convert textbook content into narrative-drive
    <img src = "https://raw.githubusercontent.com/Megh-Zyke/Histify/main/images/meghs.jpg"  height="120" alt="Meghanand">
    </p>
    <p align="center">
-   <a href = "https://github.com/Oyum2814"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+   <a href = "https://github.com/Megh-Zyke"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
    <a href = "https://www.linkedin.com/in/meghanandgejjela/">
    <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
    </a>
    </p>
-    <strong>Python | LLM | AI | Backend <strong>
+    <strong>Python | LLM | Frontend <strong>
     </td>
     <td>
 
@@ -61,12 +96,12 @@ An educational platform uses AI to convert textbook content into narrative-drive
    <img src = "https://raw.githubusercontent.com/Megh-Zyke/Histify/main/images/Anirudh.jpg"  height="120" alt="Krish Katyal">
    </p>
    <p align="center">
-   <a href = "https://github.com/krishkatyal"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+   <a href = "https://github.com/Anirudh-Kavle"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
    <a href = "https://www.linkedin.com/in/anirudhkavle28/">
    <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
    </a>
    </p>
-    <strong>Python | AI | LLM | Streamlit<strong>
+    <strong>Python | Stable Diffusion | LLM <strong>
     </td>
     <td>
       
@@ -75,7 +110,7 @@ An educational platform uses AI to convert textbook content into narrative-drive
    <img src = "https://raw.githubusercontent.com/Megh-Zyke/Histify/main/images/ishan.jpg"  height="120" alt="Krish Katyal">
    </p>
    <p align="center">
-   <a href = "https://github.com/krishkatyal"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
+   <a href = "https://github.com/ishan9678"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
    <a href = "https://www.linkedin.com/in/ishan-s-ldr/">
    <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
    </a>
