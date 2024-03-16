@@ -14,6 +14,7 @@ from gtts import gTTS
 import json
 import time
 from io import BytesIO
+from generate_quiz import generate_quiz_data , import_title
 
 # Load environment variables
 load_dotenv()
@@ -185,11 +186,17 @@ if len(session_state.data) > 0:
     st.write(session_state.data)
     data = {"information": session_state.data}
 
+    if st.button("Generate Questions"):
+        title = import_title()
+        generate_quiz_data(title)
+
     if os.path.exists("MainPoints.json"):
             os.remove("MainPOints.json")
 
     with open("MainPoints.json", "w") as json_file:
             json.dump(data, json_file)
+
+    
     
 
 
