@@ -95,12 +95,18 @@ def generate_image(prompt):
 # Function to generate a story with accompanying images
 # Function to generate a story with accompanying image
 
+subtopic_story_pairs = {}  
+story = ""
+
 def generate_story_with_image(summary):
     try:
+        global generate_story_with_image
+        global story
+
         story = generate_story(summary)
         #st.write(story)
         story_broken = story.split("\n")
-        subtopic_story_pairs = {}  # Store subtopic and its corresponding story
+        # Store subtopic and its corresponding story
         current_subtopic = None
         for line in story_broken:
             if line.startswith("**"):
@@ -117,17 +123,6 @@ def generate_story_with_image(summary):
                 else:
                     continue
         
-        for subtopic, story in subtopic_story_pairs.items():
-            st.subheader(f"{subtopic}")
-
-            if len(story) > 0:
-                image = generate_image(story)
-                if image:
-                    st.image(image)
-            else:
-                continue
-
-            st.write(f"{story}")
             # Generate image for the subtopic here using generate_image function
             
 
@@ -164,17 +159,33 @@ if uploaded_file is not None:
         with open(os.path.join(PDFS_DIR, uploaded_file.name), "wb") as f:
             f.write(uploaded_file.getvalue())
         topic = process_pdf(os.path.join(PDFS_DIR, uploaded_file.name))
-        st.header("Here's a breakdown of all the important information in the uploaded chapter:")
+        #st.header("Here's a breakdown of all the important information in the uploaded chapter:")
         chunks = chunk_text(topic)
         summaries = summarize_chunks(chunks)
         aggregated_summary = aggregate_summaries(summaries)
         session_state.data = aggregated_summary
-        st.write(aggregated_summary)
+        #st.write(aggregated_summary)
+
+if len(session_state.data) > 0:
+    st.header("Here's a breakdown of all the important information in the uploaded chapter:")
+    st.write(session_state.data)
 
 if len(session_state.data) > 0:
     if st.button("Generate Story"):
-        st.header("It's story time!")
         generate_story_with_image(session_state.data)
 
 
+if subtopic_story_pairs:
+    st.header("It's story time!")
+    for subtopic, story in subtopic_story_pairs.items():
+        st.subheader(f"{subtopic}")
 
+        if len(story) > 0:
+            image = generate_image(story)
+            if image:
+                st.image(image)
+        else:
+            continue
+
+        st.write(f"{story}")
+        # Generate image for the subtopic here using generate_image function
