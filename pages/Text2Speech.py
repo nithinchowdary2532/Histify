@@ -6,6 +6,7 @@ import tempfile
 from gtts import gTTS
 from PyPDF2 import PdfReader
 import docx
+import json
 
 try:
     os.mkdir("temp")
@@ -22,10 +23,35 @@ LANGUAGES = {
     # Potentially add more languages here
 }
 
+def import_keypoints():
+    try:
+        with open("MainPoints.json", "r") as json_file:
+            data = json.load(json_file)
+            story_data = data.get("information", [])
+            return story_data
+    except FileNotFoundError:
+        print("File not found. No data imported.")
+        return []
+
+keypoints = import_keypoints()
+
+def import_story():
+    try:
+        with open("story.json", "r") as json_file:
+            data = json.load(json_file)
+            story_data = data.get("story", [])
+            return story_data
+    except FileNotFoundError:
+        print("File not found. No data imported.")
+        return []
+
+story = import_story()
+
+
 def text_to_speech(output_language, text, tld, slow=False):
     tts = gTTS(text=text, lang=output_language, slow=slow, tld=tld)
     try:
-        my_file_name = text[:20]
+        my_file_name = "audio"
     except:
         my_file_name = "audio"
     tts.save(f"temp/{my_file_name}.mp3")
@@ -64,16 +90,14 @@ st.title("Text to Speech")
 text_input_method = st.radio("Select the text input method:", ("Type text", "Upload a document"))
 
 if text_input_method == "Type text":
-    text = st.text_area("Enter the text you want to convert to speech:")
+    st.header("Main Points")
+    text  = keypoints
+    st.write(text)
+    
 else:
-    file = st.file_uploader("Upload a document (PDF or DOCX):", type=["pdf", "docx"])
-    if file:
-        if file.type == "application/pdf":
-            text = read_pdf(file)
-        elif file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
-            text = read_docx(file)
-    else:
-        text = ""
+    st.header("Story Time")
+    text  = story
+    st.write(text)
 
 out_lang = st.selectbox(
     "Select your output language",
