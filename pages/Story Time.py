@@ -1,6 +1,6 @@
+import streamlit as st
 from streamlit_carousel import carousel
 import json
-
 
 def import_story_data():
     try:
@@ -12,8 +12,6 @@ def import_story_data():
         print("File not found. No data imported.")
         return []
 
-
 story_pairs = import_story_data()
 
-carousel(items=story_pairs, width=1.1, height=1000)
-
+carousel(items=story_pairs, width=1.2, height=1000)

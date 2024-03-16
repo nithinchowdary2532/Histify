@@ -105,6 +105,14 @@ def generate_story_with_image(summary):
         global story
 
         story = generate_story(summary)
+
+        story_data = {"story" : story}
+        if os.path.exists("story.json"):
+            os.remove("story.json")
+        
+        with open("story.json", "w") as json_file:
+            json.dump(story_data, json_file)
+        
         #st.write(story)
         story_broken = story.split("\n")
         # Store subtopic and its corresponding story
@@ -175,7 +183,15 @@ if uploaded_file is not None:
 if len(session_state.data) > 0:
     st.header("Here's a breakdown of all the important information in the uploaded chapter:")
     st.write(session_state.data)
-    st.button("Get Audio", on_click = text_to_speech(session_state.data))
+    data = {"information": session_state.data}
+
+    if os.path.exists("MainPoints.json"):
+            os.remove("MainPOints.json")
+
+    with open("MainPoints.json", "w") as json_file:
+            json.dump(data, json_file)
+    
+
 
 if len(session_state.data) > 0:
     if st.button("Generate Story"):
