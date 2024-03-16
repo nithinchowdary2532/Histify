@@ -186,24 +186,22 @@ if len(session_state.data) > 0:
     st.write(session_state.data)
     data = {"information": session_state.data}
 
-    if st.button("Generate Questions"):
-        title = import_title()
-        generate_quiz_data(title)
-
     if os.path.exists("MainPoints.json"):
             os.remove("MainPOints.json")
 
     with open("MainPoints.json", "w") as json_file:
             json.dump(data, json_file)
+    
+    title = import_title()
+    generate_quiz_data(title)
 
     
-    
-
 
 if len(session_state.data) > 0:
     if st.button("Generate Story"):
         with st.spinner("Generating Story..."):
             generate_story_with_image(session_state.data)
+
 
 def export_story_data(story_data):
         data = {"information": story_data}
@@ -229,9 +227,6 @@ if len(subtopic_story_pairs) > 0 :
         }
         if len(story) > 0:
             image = generate_image(story)
-            if image:
-                st.image(image)
-
             subtopic_data["img"] = image[0]
         else:
             continue

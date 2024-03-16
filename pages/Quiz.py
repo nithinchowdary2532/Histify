@@ -70,7 +70,23 @@ st.progress(progress_bar_value)
 question_item = quiz_data[st.session_state.current_index]
 st.subheader(f"Question {st.session_state.current_index + 1}")
 st.title(f"{question_item['question']}")
-st.write(question_item['information'])
+
+hint_shown = False
+
+if st.button("Confused? Here's a hint!"):
+    hint_shown = True
+    
+    if st.button("x"):
+        hint_shown = False
+
+if hint_shown:
+    
+    print("Hint shown:", hint_shown)  # Print the current state of hint_shown
+    if hint_shown:
+        st.write(question_item.get('information', ''))
+else:
+        st.write("")
+
 
 st.markdown(""" ___""")
 

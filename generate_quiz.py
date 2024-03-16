@@ -12,7 +12,7 @@ llm = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key=os.getenv("GOOGL
 
 
 prompt = PromptTemplate.from_template("""
-Given topic name you should generate 5 mcqs in json string so can use json.loads() with keys question, information, options, answer. This is the topic name - {topic}. It should be in format of [
+Given topic name you should generate 10 mcqs in json string so can use json.loads() with keys question, information, options, answer. This is the topic name - {topic}. It should be in format of [
     {{
         "question": "What is the primary goal of artificial intelligence?",
         "information": "This field of computer science aims to create systems capable of performing tasks that would typically require human intelligence.",
