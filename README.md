@@ -40,7 +40,7 @@ An educational platform uses AI to convert textbook content into narrative-drive
 ![frame_firefox_mac_dark_(1)](https://raw.githubusercontent.com/Megh-Zyke/Histify/main/images/1.jpg)
 ![frame_firefox_mac_dark_(1)](https://raw.githubusercontent.com/Megh-Zyke/Histify/main/images/2.jpg)
 ![frame_firefox_mac_dark_(1)](https://raw.githubusercontent.com/Megh-Zyke/Histify/main/images/3.jpg)
-![frame_firefox_mac_dark_(1)](https://raw.githubusercontent.com/Megh-Zyke/Histify/main/images/4.jpg)
+![image](https://github.com/Megh-Zyke/Histify/assets/96326613/12f90c28-6bf9-4557-a125-e8d37e488b25)
 
 # Summarize
 - Utilizes Gemini to comprehensively analyze educational textbooks.
