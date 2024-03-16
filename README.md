@@ -85,7 +85,7 @@ An educational platform uses AI to convert textbook content into narrative-drive
    <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
    </a>
    </p>
-    <strong>Python | LLM | AI <strong>
+    <strong>Python | LLM | AI | Web Dev<strong>
     </td>
     <td>
 
@@ -100,7 +100,7 @@ An educational platform uses AI to convert textbook content into narrative-drive
    <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
    </a>
    </p>
-    <strong>Python | Stable Diffusion | LLM <strong>
+    <strong>Python | Stable Diffusion | LLM | Web Dev<strong>
     </td>
     <td>
       
@@ -130,7 +130,7 @@ An educational platform uses AI to convert textbook content into narrative-drive
 
    </a>
    </p>
-    <strong>Web Dev | Gen AI<strong>
+    <strong>Web Dev | Gen AI | Python<strong>
     </td>
     
 
