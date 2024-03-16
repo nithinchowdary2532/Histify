@@ -1,5 +1,8 @@
-# Histify 
-<img src="https://raw.githubusercontent.com/Megh-Zyke/Histify/main/images/logo.jpg" width="100" height="100">
+# Team NAMI | Histify 
+<div style="display: flex;">
+<!--     <img src="https://raw.githubusercontent.com/Megh-Zyke/Histify/main/images/Nami.webp" alt="Team Name" height="150"> -->
+    <img src="https://raw.githubusercontent.com/Megh-Zyke/Histify/main/images/logo.jpg" width="150" height="150">
+</div>
 
 ## Table of Contents
 
