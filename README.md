@@ -69,7 +69,7 @@ An educational platform uses AI to convert textbook content into narrative-drive
 - Gamifies the self-evaluation process, encouraging students to improve their performance with each attempt and enhancing engagement in the learning process.
 
 
-## Authors -
+## Authors 
 <div align="left"> 
   <table>
   <tr align="left">
