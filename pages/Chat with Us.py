@@ -61,7 +61,7 @@ def get_conversational_chain():
     prompt_template = """
     Answer the question as detailed as possible from the provided context, make sure to provide all the details,if the answer is not in
     provided context just say, "answer is not available in the context" ,  don't provide the wrong answer\n\n
-    If the answer is not in the provided text , append this line to the end of the response you give , "Do you want to explore more resources?".
+    If the answer is not avalaibe in the context ,always append this line to the end of the response you give , "Do you want to explore more resources?".
     Context:\n {context}?\n
     Question: \n{question}\n
 
@@ -120,9 +120,9 @@ def main():
     if user_question:
         response_from_gemini = user_input(user_question)
         
-        if "Do you want to explore more resources?" in response_from_gemini:
-            if st.button("Explore more resources"):
-                response = get_gemini_response2(user_question)
+    
+        if st.button("Explore more resources"):
+                response = get_gemini_response2(user_question + "in detail")
                 formatted_response = format_gemini_response(response)
                 st.write("Answer: ", formatted_response)
     else:
