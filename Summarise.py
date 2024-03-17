@@ -98,7 +98,13 @@ def generate_image(prompt):
 # Function to generate a story with accompanying image
 
 subtopic_story_pairs = {}  
-story = ""
+# Streamlit session state initialization
+session_state = st.session_state
+
+# Check if data exists in session state, if not initialize to an empty string
+if 'data' not in session_state:
+    session_state.data = ""
+    session_state.storyData = ""
 
 def generate_story_with_image(summary):
     try:
@@ -106,7 +112,7 @@ def generate_story_with_image(summary):
         global story
 
         story = generate_story(summary)
-
+        session_state.storyData = story
         story_data = {"story" : story}
         if os.path.exists("story.json"):
             os.remove("story.json")
@@ -148,15 +154,6 @@ def generate_story(summary):
         return story
     except Exception as e:
         st.error(f"Error generating story: {e}")
-
-
-
-# Streamlit session state initialization
-session_state = st.session_state
-
-# Check if data exists in session state, if not initialize to an empty string
-if 'data' not in session_state:
-    session_state.data = ""
 
 st.title("Chapter Summarizer")
 
@@ -214,9 +211,9 @@ def export_story_data(story_data):
         with open("story_data.json", "w") as json_file:
             json.dump(data, json_file)
 
-    
 
-if len(subtopic_story_pairs) > 0 :
+
+if len(session_state.storyData) > 0 :
 
     data = []
     st.header("It's story time!")
@@ -227,11 +224,15 @@ if len(subtopic_story_pairs) > 0 :
             "text": story,
             "img": ""
         }
+
+        st.header(subtopic)
         if len(story) > 0:
             image = generate_image(story)
+            st.image(image)
             subtopic_data["img"] = image[0]
         else:
             continue
+        st.write(story)
         data.append(subtopic_data)
     export_story_data(data)
         # Generate image for the subtopic here using generate_image function

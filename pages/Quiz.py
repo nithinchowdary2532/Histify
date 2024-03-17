@@ -5,7 +5,7 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 import os
 import dotenv
-
+from generate_quiz import generate_quiz_data , import_title
 
 def run():
     st.set_page_config(
@@ -35,10 +35,15 @@ with open('./quiz_data.json', 'r', encoding='utf-8') as f:
     quiz_data = json.load(f)
 
 def restart_quiz():
+    title = import_title()
+    print(title)
+    generate_quiz_data(title)
+
     st.session_state.current_index = 0
     st.session_state.score = 0
     st.session_state.selected_option = None
     st.session_state.answer_submitted = False
+
 
 def submit_answer():
 
