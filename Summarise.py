@@ -184,7 +184,7 @@ if len(session_state.data) > 0:
     data = {"information": session_state.data}
 
     if os.path.exists("MainPoints.json"):
-            os.remove("MainPOints.json")
+            os.remove("MainPoints.json")
 
     with open("MainPoints.json", "w") as json_file:
             json.dump(data, json_file)
