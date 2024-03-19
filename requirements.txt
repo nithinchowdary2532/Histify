@@ -1,3 +1,4 @@
+replicate
 langchain 
 python-dotenv
 google-generativeai
@@ -18,3 +19,4 @@ flask
 googletrans
 python-docx
 streamlit-carousel
+faiss-cpu
