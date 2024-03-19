@@ -1,3 +1,4 @@
+replicate
 langchain 
 python-dotenv
 google-generativeai
