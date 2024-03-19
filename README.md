@@ -21,7 +21,8 @@
 
 You'll need a Gemini account, and a Replicate (replicate.com) account.
 
-## Setup
+## Setup 
+[Check it out here](https://histifybynami.streamlit.app/)
 
 ```
 pip install -r Chat with Us.txt
