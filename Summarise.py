@@ -318,7 +318,7 @@ if len(session_state.data) > 0:
             generate_story_with_image(session_state.data)
 
 
-def export_story_data(story_data):
+def export_story_data(story_data,title):
     data = {"information": story_data}
 
     if os.path.exists("story_data.json"):
@@ -326,13 +326,16 @@ def export_story_data(story_data):
 
     with open("story_data.json", "w") as json_file:
         json.dump(data, json_file)
+    
+    doc_ref = db.collection(u'Stories').document(title)
+    doc_ref.set(data)
 
 
 if len(session_state.storyData) > 0:
 
     data = []
+    title = None
     st.header("It's story time!")
-    st.subheader("Check out the carasouel to see the story !!")
     for subtopic, story in subtopic_story_pairs.items():
         subtopic_data = {
             "title": subtopic,
@@ -341,6 +344,12 @@ if len(session_state.storyData) > 0:
         }
 
         st.header(subtopic)
+
+        if title == None:
+            title = subtopic
+
+        print("subtopic", subtopic)
+        print("subtopic data", subtopic_data)
         if len(story) > 0:
             image = generate_image(story)
             st.image(image)
@@ -349,6 +358,7 @@ if len(session_state.storyData) > 0:
             continue
         st.write(story)
         data.append(subtopic_data)
-    export_story_data(data)
+    export_story_data(data,title)
+    
     st.success('Story Generation Successful!', icon="✅")
 
