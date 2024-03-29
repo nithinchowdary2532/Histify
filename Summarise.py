@@ -27,6 +27,7 @@ PDFS_DIR = "pdfs"
 
 REPLICATE_API_TOKEN = os.getenv("REPLICATE_API_TOKEN")
 api = replicate.Client(api_token=REPLICATE_API_TOKEN)
+st.sidebar.image("images/newlogo.jpg", use_column_width=True)
 
 # Initialize language model and summarization chains
 llm = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key=GOOGLE_API_KEY)
