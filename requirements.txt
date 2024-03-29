@@ -25,4 +25,5 @@ Pillow
 easyocr
 torchvision
 torch
+firebase-admin
 streamlit_mic_recorder
