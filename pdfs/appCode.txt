@@ -1,0 +1,100 @@
+import os
+import PyPDF2
+import streamlit as st
+from dotenv import load_dotenv
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain.prompts import PromptTemplate
+from langchain.chains import LLMChain
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.chains.summarize import load_summarize_chain
+
+# Load environment variables
+load_dotenv()
+
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+PDFS_DIR = "pdfs"
+
+# Initialize language model and summarization chains
+llm = ChatGoogleGenerativeAI(model="gemini-pro", google_api_key=GOOGLE_API_KEY)
+prompt = PromptTemplate.from_template("You are a text summarizer. You will be given a pdf of a subject chapter, give my the description of each subtopic in points and explain them. Mention any important dates, formulae or methodologies if given. The data should be such that reading the keypoints would need to give me an entire jist of the chapter with the important pointers. After each heading mention the important dates given or the important formaule along with their significance or the functionality. The dates or formulae should not be missed if there are some. And and the end make a seperate column for all the dates and formuale along with their significance. Also return the title of the data given. The data is given here : {topic}.")
+prompt2 = PromptTemplate.from_template("You are a story maker. You will be given some key points of a chapter from any subject limited to highschool. Convert those key points into an interactive story which will help even a grade schooler understand the basic outline of the subject. Make each subtopic as a new story and if there is any correlation between the sub heading connect the story lines. Make the story fun, easy to understand and engaging. Include in details aspects along with dates and the important points in the story. Dont missout any of the important keypoints.For each subtopic let the contenet be around 3 to 4 pages long. also for each subtopic add the important dates or formulae before moving to the next subtopic if there are any.The keypoints are given here : {keypoints}")
+llm_chain = LLMChain(llm=llm, prompt=prompt)
+llm_chain2 = LLMChain(llm=llm, prompt=prompt2)
+
+chain = load_summarize_chain(
+    llm,
+    chain_type= 'map_reduce',
+    verbose = False
+)
+
+# Function to split text into chunks
+def chunk_text(text):
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=10000, chunk_overlap=20)
+    chunks = text_splitter.create_documents([text])
+    return chunks
+
+# Function to process PDF and generate summary
+def process_pdf(file):
+    all_text = ""
+    with open(file, 'rb') as file:
+        pdf_reader = PyPDF2.PdfReader(file)
+        for i, page in enumerate(pdf_reader.pages):
+            content = page.extract_text()
+            if content:
+                all_text += content
+    return all_text
+
+# Function to apply summarization to each chunk
+def summarize_chunks(chunks):
+    summaries = []
+    for chunk in chunks:
+        try:
+            summary = llm_chain.run(topic=chunk)
+            summaries.append(summary)
+        except Exception as e:
+            st.error(f"Error summarizing chunk: {e}")
+    return summaries
+
+# Function to aggregate summaries
+def aggregate_summaries(summaries):
+    aggregated_summary = "\n".join(summaries)
+    return aggregated_summary
+
+# Function to generate a story
+def generate_story(summary):
+    try:
+        story = llm_chain2.run(keypoints=summary)
+        return story
+    except Exception as e:
+        st.error(f"Error generating story: {e}")
+
+# Streamlit session state initialization
+session_state = st.session_state
+
+# Check if data exists in session state, if not initialize to an empty string
+if 'data' not in session_state:
+    session_state.data = ""
+
+st.title("Chapter Summarizer")
+
+uploaded_file = st.file_uploader("Upload a PDF file", type="pdf")
+
+if uploaded_file is not None:
+    if st.button("Get Summary"):
+        if not os.path.exists(PDFS_DIR):
+            os.makedirs(PDFS_DIR)
+        with open(os.path.join(PDFS_DIR, uploaded_file.name), "wb") as f:
+            f.write(uploaded_file.getvalue())
+        topic = process_pdf(os.path.join(PDFS_DIR, uploaded_file.name))
+        st.header("Here's a breakdown of all the important information in the uploaded chapter:")
+        chunks = chunk_text(topic)
+        summaries = summarize_chunks(chunks)
+        aggregated_summary = aggregate_summaries(summaries)
+        session_state.data = aggregated_summary
+        st.write(aggregated_summary)
+
+if len(session_state.data) > 0:
+    if st.button("Generate Story"):
+        st.header("It's story time!")
+        story = generate_story(session_state.data)
+        st.write(story)
