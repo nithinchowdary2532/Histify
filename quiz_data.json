@@ -1,1 +1,112 @@
-[{"question": "What is the function of the cornea?", "information": "It is the clear, dome-shaped outer layer of the eye that helps to focus light.", "options": ["To protect the eye from external damage", "To adjust the amount of light entering the eye", "To focus light on the retina", "To transmit nerve impulses to the brain"], "answer": "To focus light on the retina"}, {"question": "What is the pupil?", "information": "It is the black opening in the center of the iris that allows light to enter the eye.", "options": ["The colored part of the eye", "The clear, dome-shaped outer layer of the eye", "The opening in the center of the iris", "The light-sensitive layer at the back of the eye"], "answer": "The opening in the center of the iris"}, {"question": "What is the function of the iris?", "information": "It is the colored part of the eye that controls the size of the pupil.", "options": ["To focus light on the retina", "To protect the eye from external damage", "To adjust the amount of light entering the eye", "To transmit nerve impulses to the brain"], "answer": "To adjust the amount of light entering the eye"}, {"question": "What is the lens?", "information": "It is a transparent, flexible structure behind the iris that helps to focus light on the retina.", "options": ["The colored part of the eye", "The clear, dome-shaped outer layer of the eye", "The opening in the center of the iris", "The light-sensitive layer at the back of the eye"], "answer": "A transparent, flexible structure behind the iris that helps to focus light on the retina"}, {"question": "What is the retina?", "information": "It is the light-sensitive layer at the back of the eye that converts light into electrical signals.", "options": ["The colored part of the eye", "The clear, dome-shaped outer layer of the eye", "The opening in the center of the iris", "The light-sensitive layer at the back of the eye"], "answer": "The light-sensitive layer at the back of the eye"}, {"question": "What are the two types of photoreceptor cells in the retina?", "information": "They are rods and cones.", "options": ["Rods and cones", "Bipolar cells and ganglion cells", "Amacrine cells and horizontal cells", "M\u00fcller cells and astrocytes"], "answer": "Rods and cones"}, {"question": "What are the functions of rods and cones?", "information": "Rods are responsible for vision in dim light, while cones are responsible for color vision and vision in bright light.", "options": ["Rods are responsible for color vision, while cones are responsible for vision in dim light", "Rods and cones are both responsible for vision in bright light", "Rods and cones are both responsible for vision in dim light", "Rods are responsible for vision in bright light, while cones are responsible for color vision"], "answer": "Rods are responsible for vision in dim light, while cones are responsible for color vision and vision in bright light"}, {"question": "What is the fovea?", "information": "It is a small, central area of the retina that contains a high concentration of cones and is responsible for sharp, central vision.", "options": ["The colored part of the eye", "The clear, dome-shaped outer layer of the eye", "The opening in the center of the iris", "A small, central area of the retina that contains a high concentration of cones"], "answer": "A small, central area of the retina that contains a high concentration of cones"}, {"question": "What is the optic nerve?", "information": "It is a bundle of nerve fibers that carries visual information from the retina to the brain.", "options": ["The colored part of the eye", "The clear, dome-shaped outer layer of the eye", "The opening in the center of the iris", "A bundle of nerve fibers that carries visual information from the retina to the brain"], "answer": "A bundle of nerve fibers that carries visual information from the retina to the brain"}, {"question": "What is the brain's visual cortex?", "information": "It is the part of the brain that processes visual information.", "options": ["The colored part of the eye", "The clear, dome-shaped outer layer of the eye", "The opening in the center of the iris", "The part of the brain that processes visual information"], "answer": "The part of the brain that processes visual information"}]
+[
+  {
+    "question": "What is the function of the cornea?",
+    "information": "It is the clear, dome-shaped outer layer of the eye that helps to focus light.",
+    "options": [
+      "To protect the eye from external damage",
+      "To adjust the amount of light entering the eye",
+      "To focus light on the retina",
+      "To transmit nerve impulses to the brain"
+    ],
+    "answer": "To focus light on the retina"
+  },
+  {
+    "question": "What is the pupil?",
+    "information": "It is the black opening in the center of the iris that allows light to enter the eye.",
+    "options": [
+      "The colored part of the eye",
+      "The clear, dome-shaped outer layer of the eye",
+      "The opening in the center of the iris",
+      "The light-sensitive layer at the back of the eye"
+    ],
+    "answer": "The opening in the center of the iris"
+  },
+  {
+    "question": "What is the function of the iris?",
+    "information": "It is the colored part of the eye that controls the size of the pupil.",
+    "options": [
+      "To focus light on the retina",
+      "To protect the eye from external damage",
+      "To adjust the amount of light entering the eye",
+      "To transmit nerve impulses to the brain"
+    ],
+    "answer": "To adjust the amount of light entering the eye"
+  },
+  {
+    "question": "What is the lens?",
+    "information": "It is a transparent, flexible structure behind the iris that helps to focus light on the retina.",
+    "options": [
+      "The colored part of the eye",
+      "The clear, dome-shaped outer layer of the eye",
+      "The opening in the center of the iris",
+      "The light-sensitive layer at the back of the eye"
+    ],
+    "answer": "A transparent, flexible structure behind the iris that helps to focus light on the retina"
+  },
+  {
+    "question": "What is the retina?",
+    "information": "It is the light-sensitive layer at the back of the eye that converts light into electrical signals.",
+    "options": [
+      "The colored part of the eye",
+      "The clear, dome-shaped outer layer of the eye",
+      "The opening in the center of the iris",
+      "The light-sensitive layer at the back of the eye"
+    ],
+    "answer": "The light-sensitive layer at the back of the eye"
+  },
+  {
+    "question": "What are the two types of photoreceptor cells in the retina?",
+    "information": "They are rods and cones.",
+    "options": [
+      "Rods and cones",
+      "Bipolar cells and ganglion cells",
+      "Amacrine cells and horizontal cells",
+      "M\u00fcller cells and astrocytes"
+    ],
+    "answer": "Rods and cones"
+  },
+  {
+    "question": "What are the functions of rods and cones?",
+    "information": "Rods are responsible for vision in dim light, while cones are responsible for color vision and vision in bright light.",
+    "options": [
+      "Rods are responsible for color vision, while cones are responsible for vision in dim light",
+      "Rods and cones are both responsible for vision in bright light",
+      "Rods and cones are both responsible for vision in dim light",
+      "Rods are responsible for vision in bright light, while cones are responsible for color vision"
+    ],
+    "answer": "Rods are responsible for vision in dim light, while cones are responsible for color vision and vision in bright light"
+  },
+  {
+    "question": "What is the fovea?",
+    "information": "It is a small, central area of the retina that contains a high concentration of cones and is responsible for sharp, central vision.",
+    "options": [
+      "The colored part of the eye",
+      "The clear, dome-shaped outer layer of the eye",
+      "The opening in the center of the iris",
+      "A small, central area of the retina that contains a high concentration of cones"
+    ],
+    "answer": "A small, central area of the retina that contains a high concentration of cones"
+  },
+  {
+    "question": "What is the optic nerve?",
+    "information": "It is a bundle of nerve fibers that carries visual information from the retina to the brain.",
+    "options": [
+      "The colored part of the eye",
+      "The clear, dome-shaped outer layer of the eye",
+      "The opening in the center of the iris",
+      "A bundle of nerve fibers that carries visual information from the retina to the brain"
+    ],
+    "answer": "A bundle of nerve fibers that carries visual information from the retina to the brain"
+  },
+  {
+    "question": "What is the brain's visual cortex?",
+    "information": "It is the part of the brain that processes visual information.",
+    "options": [
+      "The colored part of the eye",
+      "The clear, dome-shaped outer layer of the eye",
+      "The opening in the center of the iris",
+      "The part of the brain that processes visual information"
+    ],
+    "answer": "The part of the brain that processes visual information"
+  }
+]

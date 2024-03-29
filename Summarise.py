@@ -277,6 +277,7 @@ if uploaded_file is not None:
 if len(session_state.data) > 0:
     st.header("Here's a breakdown of all the important information in the uploaded chapter:")
     st.write(session_state.data)
+    st.success('Summary Generated!', icon="✅")
     data = {"information": session_state.data}
 
     if os.path.exists("MainPoints.json"):
@@ -288,7 +289,6 @@ if len(session_state.data) > 0:
     title = import_title()
     print(title)
     generate_quiz_data(title)
-
 if len(session_state.data) > 0:
     if st.button("Generate Story"):
         with st.spinner("Generating Story..."):
@@ -327,6 +327,7 @@ if len(session_state.storyData) > 0:
         st.write(story)
         data.append(subtopic_data)
     export_story_data(data)
+    st.success('Story Generation Successful!', icon="✅")
+
     # Generate image for the subtopic here using generate_image function
 
-st.sidebar.success("Select a page above.")
