@@ -9,17 +9,22 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
+import json
+import os
+os.environ['KMP_DUPLICATE_LIB_OK']='True'
+
 
 load_dotenv()
 os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-import google.generativeai as genai
 
 def get_gemini_response(question):
     api_key = os.getenv("GOOGLE_API_KEY")
     if not question:
-        return "Please provide a non-empty question."
+        st.warning('Please enter a non empty question.', icon="⚠")
+        return None
+    
     
     genai.configure(api_key=api_key)  # Pass the API key as a keyword argument
     
@@ -120,29 +125,30 @@ def main():
     if user_question:
         response_from_gemini = user_input(user_question)
         
-    
         if st.button("Explore more resources"):
-                response = get_gemini_response2(user_question + "in detail")
-                formatted_response = format_gemini_response(response)
-                st.write("Answer: ", formatted_response)
-    else:
-        response_from_gemini = get_gemini_response(user_question)
-        st.write("Reply: ", response_from_gemini)   
-        
-        if "Do you want to explore more resources?" in response_from_gemini:
-            response = get_gemini_response2(user_question)
+            response = get_gemini_response2(user_question + "in detail")
             formatted_response = format_gemini_response(response)
             st.write("Answer: ", formatted_response)
+    else:
+        # Read text from chapter_data.json
+        with open("pdf_data/chapter_data.json", "r") as json_file:
+            chapter_data = json.load(json_file)
+            raw_text = chapter_data["information"]
 
-    with st.sidebar:
-        st.title("Menu:")
-        pdf_docs = st.file_uploader("Upload your PDF Files and Click on the Submit & Process Button", accept_multiple_files=True)
-        if st.button("Submit & Process"):
-            with st.spinner("Processing..."):
-                raw_text = get_pdf_text(pdf_docs)
-                text_chunks = get_text_chunks(raw_text)
-                get_vector_store(text_chunks)
-                st.success("Done")
+        # Process the text
+        text_chunks = get_text_chunks(raw_text)
+        get_vector_store(text_chunks)
+
+        response_from_gemini = get_gemini_response(user_question)
+        st.write("Reply: ", response_from_gemini)  
+
+        if response_from_gemini is not None:
+            if "Do you want to explore more resources?" in response_from_gemini:
+                response = get_gemini_response2(user_question)
+                formatted_response = format_gemini_response(response)
+                st.write("Answer: ", formatted_response)
+
+
 
 if __name__ == "__main__":
     main()
