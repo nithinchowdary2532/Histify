@@ -18,6 +18,16 @@ from generate_quiz import generate_quiz_data, import_title
 import easyocr as ocr
 import numpy as np
 from easyocr import Reader
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
+
+if not firebase_admin._apps:
+    cred = credentials.Certificate(r"C:\Users\mahna\Desktop\mozohack\Histify\serviceAccountKey.json")
+    firebase_admin.initialize_app(cred)
+
+db = firestore.client()
+
 
 # Load environment variables
 on = st.toggle('OpenDyslexic')
@@ -282,6 +292,8 @@ if uploaded_file is not None:
 if len(session_state.data) > 0:
     st.header("Here's a breakdown of all the important information in the uploaded chapter:")
     st.write(session_state.data)
+    print(session_state.data)
+
     st.success('Summary Generated!', icon="✅")
     data = {"information": session_state.data}
 
@@ -291,9 +303,15 @@ if len(session_state.data) > 0:
     with open("MainPoints.json", "w") as json_file:
         json.dump(data, json_file)
 
+
     title = import_title()
-    print(title)
     generate_quiz_data(title)
+    
+    #firebase
+    doc_ref = db.collection(u'Sumarries').document(title)
+    doc_ref.set(data)
+
+
 if len(session_state.data) > 0:
     if st.button("Generate Story"):
         with st.spinner("Generating Story..."):
@@ -333,6 +351,4 @@ if len(session_state.storyData) > 0:
         data.append(subtopic_data)
     export_story_data(data)
     st.success('Story Generation Successful!', icon="✅")
-
-    # Generate image for the subtopic here using generate_image function
 
