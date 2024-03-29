@@ -1,0 +1,9 @@
+@import url(https://db.onlinewebfonts.com/c/0c774ed53507e9ecda3f9d9e96a504f5?family=OpenDyslexic3+Regular);
+html, body, [class*="css"] {
+    font-family: "OpenDyslexic3 Regular";
+    font-size: 16px;
+    font-weight: 600;
+    Line-Height:26px;
+    color: #091747;
+}
+

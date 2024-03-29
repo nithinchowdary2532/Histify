@@ -25,3 +25,4 @@ Pillow
 easyocr
 torchvision
 torch
+streamlit_mic_recorder
