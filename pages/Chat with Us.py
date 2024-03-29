@@ -12,7 +12,8 @@ from dotenv import load_dotenv
 import json
 import os
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
-
+with open("style.css") as css:
+    st.markdown(f'<style>{css.read()}</style>' , unsafe_allow_html= True)
 
 load_dotenv()
 os.getenv("GOOGLE_API_KEY")
