@@ -20,3 +20,8 @@ googletrans
 python-docx
 streamlit-carousel
 faiss-cpu
+numpy
+Pillow
+easyocr
+torchvision
+torch
