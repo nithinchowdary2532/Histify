@@ -1,0 +1,5 @@
+.env
+story.json
+story_data.json
+temp/
+pdf_data/
