@@ -186,7 +186,7 @@ st.title("Chapter Summarizer")
 
 uploaded_file = st.file_uploader("Upload a PDF file", type="pdf")
 uploaded_image=st.file_uploader("Upload an image", type=["png","jpg","jpeg"])
-picture = st.camera_input("Take a picture")
+
 
 if uploaded_image is not None:
         # Button to perform OCR
@@ -207,24 +207,32 @@ if uploaded_image is not None:
             session_state.data = aggregated_summary
 
 
-if picture:
-    st.image(picture)
+
+st.write("Or")
+
+disabled = True
+
+if st.button("Take a Photo"):
+    disabled = False
+
+picture = st.camera_input("", disabled = disabled)
+
 if picture is not None:
-    if st.button("Perform OCR and Summarise"):
-        # Open the uploaded image
-        input_image = Image.open(picture)
-        st.image(input_image, caption='Uploaded Image', use_column_width=True)
+            if st.button("Perform OCR and Summarise"):
+                # Open the uploaded image
+                input_image = Image.open(picture)
+                # st.image(input_image, caption='Uploaded Image', use_column_width=True)
 
-        # Perform OCR
-        with st.spinner("Performing OCR..."):
-            result_text = perform_ocr(input_image)
-            st.write("OCR Result:")
-            st.write(result_text)
+                # Perform OCR
+                with st.spinner("Performing OCR..."):
+                    result_text = perform_ocr(input_image)
+                    st.write("OCR Result:")
+                    st.write(result_text)
 
-        chunks = chunk_text(result_text)
-        summaries = summarize_chunks(chunks)
-        aggregated_summary = aggregate_summaries(summaries)
-        session_state.data = aggregated_summary
+                chunks = chunk_text(result_text)
+                summaries = summarize_chunks(chunks)
+                aggregated_summary = aggregate_summaries(summaries)
+                session_state.data = aggregated_summary
 
 if uploaded_file is not None:
     if st.button("Get Summary"):
@@ -242,14 +250,33 @@ if uploaded_file is not None:
             aggregated_summary = aggregate_summaries(summaries)
             session_state.data = aggregated_summary
             # st.write(aggregated_summary)
+            json_file_path = os.path.join("pdf_data", "chapter_data.json")
+
+            if len(session_state.data) > 0:
+                data = {"information": session_state.data}
+                
+                if os.path.exists(json_file_path):
+                    os.remove(json_file_path)
+                
+                if not os.path.exists("pdf_data"):
+                    os.makedirs("pdf_data")
+                
+                json_file_path = os.path.join("pdf_data", "chapter_data.json")
+                with open(json_file_path, "w") as json_file:
+                    json.dump(data, json_file)
+
+                
+                
+                if os.path.exists("MainPoints.json"):
+                        os.remove("MainPoints.json")
+
+                with open("MainPoints.json", "w") as json_file:
+                        json.dump(data, json_file)
+            
 
 if len(session_state.data) > 0:
-
     st.header("Here's a breakdown of all the important information in the uploaded chapter:")
     st.write(session_state.data)
-    st.success('Summary Generated!', icon="✅")
-    if st.button("Click here for Text to Speech"):
-        st.switch_page("pages/Text2Speech.py")
     data = {"information": session_state.data}
 
     if os.path.exists("MainPoints.json"):
@@ -300,13 +327,6 @@ if len(session_state.storyData) > 0:
         st.write(story)
         data.append(subtopic_data)
     export_story_data(data)
-    st.success('Story Generation Successful!', icon="✅")
-    if st.button("Click here for Carousel View"):
-        st.switch_page("pages/Story Time.py")
-    if st.button("Click here for Attempting our Personalized Quiz"):
-        st.switch_page("pages/Quiz.py")
-    if st.button("Have any doubts, reach our to our QuizBot"):
-        st.switch_page("pages/Chat with Us.py")
     # Generate image for the subtopic here using generate_image function
 
 st.sidebar.success("Select a page above.")
