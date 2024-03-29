@@ -1,1 +1,112 @@
-[{"question": "What was the primary cause of the rise of nationalism in Europe?", "information": "The rise of nationalism in Europe was a complex process with many contributing factors, including the French Revolution, the Napoleonic Wars, and the Industrial Revolution.", "options": ["The French Revolution", "The Napoleonic Wars", "The Industrial Revolution", "All of the above"], "answer": "All of the above"}, {"question": "What were the key ideas of nationalism?", "information": "The key ideas of nationalism included the belief in the importance of the nation-state, the glorification of one's own culture and history, and the desire for national unity.", "options": ["The belief in the importance of the nation-state", "The glorification of one's own culture and history", "The desire for national unity", "All of the above"], "answer": "All of the above"}, {"question": "How did nationalism contribute to the outbreak of World War I?", "information": "Nationalism contributed to the outbreak of World War I by creating a climate of tension and rivalry between European nations.", "options": ["By creating a climate of tension and rivalry between European nations", "By leading to the formation of alliances between European powers", "By encouraging the militarization of Europe", "All of the above"], "answer": "All of the above"}, {"question": "What were the consequences of the rise of nationalism in Europe?", "information": "The consequences of the rise of nationalism in Europe included the outbreak of World War I, the collapse of the Ottoman Empire, and the rise of fascism and Nazism.", "options": ["The outbreak of World War I", "The collapse of the Ottoman Empire", "The rise of fascism and Nazism", "All of the above"], "answer": "All of the above"}, {"question": "What is the legacy of nationalism in Europe today?", "information": "The legacy of nationalism in Europe today is complex and contested.", "options": ["The legacy of nationalism in Europe today is complex and contested", "Nationalism is a force for good in Europe", "Nationalism is a force for evil in Europe", "Nationalism is no longer a relevant force in Europe"], "answer": "The legacy of nationalism in Europe today is complex and contested"}, {"question": "What are some of the challenges facing nationalism in Europe today?", "information": "Some of the challenges facing nationalism in Europe today include the rise of globalization, the European Union, and immigration.", "options": ["The rise of globalization", "The European Union", "Immigration", "All of the above"], "answer": "All of the above"}, {"question": "What is the future of nationalism in Europe?", "information": "The future of nationalism in Europe is uncertain.", "options": ["The future of nationalism in Europe is uncertain", "Nationalism will continue to be a major force in Europe", "Nationalism will decline in importance in Europe", "Nationalism will disappear from Europe"], "answer": "The future of nationalism in Europe is uncertain"}, {"question": "What are some of the positive aspects of nationalism?", "information": "Some of the positive aspects of nationalism include the promotion of national unity and pride, the preservation of cultural traditions, and the provision of a sense of belonging.", "options": ["The promotion of national unity and pride", "The preservation of cultural traditions", "The provision of a sense of belonging", "All of the above"], "answer": "All of the above"}, {"question": "What are some of the negative aspects of nationalism?", "information": "Some of the negative aspects of nationalism include the promotion of division and conflict, the suppression of minority rights, and the justification of violence.", "options": ["The promotion of division and conflict", "The suppression of minority rights", "The justification of violence", "All of the above"], "answer": "All of the above"}, {"question": "How can we harness the positive aspects of nationalism while mitigating the negative aspects?", "information": "We can harness the positive aspects of nationalism while mitigating the negative aspects by promoting tolerance and understanding, respecting minority rights, and resolving conflicts peacefully.", "options": ["By promoting tolerance and understanding", "By respecting minority rights", "By resolving conflicts peacefully", "All of the above"], "answer": "All of the above"}]
+[
+  {
+    "question": "What was the primary cause of the rise of nationalism in Europe?",
+    "information": "The rise of nationalism in Europe was a complex process with many contributing factors, including the French Revolution, the Napoleonic Wars, and the Industrial Revolution.",
+    "options": [
+      "The French Revolution",
+      "The Napoleonic Wars",
+      "The Industrial Revolution",
+      "All of the above"
+    ],
+    "answer": "All of the above"
+  },
+  {
+    "question": "What were the key ideas of nationalism?",
+    "information": "The key ideas of nationalism included the belief in the importance of the nation-state, the glorification of one's own culture and history, and the desire for national unity.",
+    "options": [
+      "The belief in the importance of the nation-state",
+      "The glorification of one's own culture and history",
+      "The desire for national unity",
+      "All of the above"
+    ],
+    "answer": "All of the above"
+  },
+  {
+    "question": "How did nationalism contribute to the outbreak of World War I?",
+    "information": "Nationalism contributed to the outbreak of World War I by creating a climate of tension and rivalry between European nations.",
+    "options": [
+      "By creating a climate of tension and rivalry between European nations",
+      "By leading to the formation of alliances between European powers",
+      "By encouraging the militarization of Europe",
+      "All of the above"
+    ],
+    "answer": "All of the above"
+  },
+  {
+    "question": "What were the consequences of the rise of nationalism in Europe?",
+    "information": "The consequences of the rise of nationalism in Europe included the outbreak of World War I, the collapse of the Ottoman Empire, and the rise of fascism and Nazism.",
+    "options": [
+      "The outbreak of World War I",
+      "The collapse of the Ottoman Empire",
+      "The rise of fascism and Nazism",
+      "All of the above"
+    ],
+    "answer": "All of the above"
+  },
+  {
+    "question": "What is the legacy of nationalism in Europe today?",
+    "information": "The legacy of nationalism in Europe today is complex and contested.",
+    "options": [
+      "The legacy of nationalism in Europe today is complex and contested",
+      "Nationalism is a force for good in Europe",
+      "Nationalism is a force for evil in Europe",
+      "Nationalism is no longer a relevant force in Europe"
+    ],
+    "answer": "The legacy of nationalism in Europe today is complex and contested"
+  },
+  {
+    "question": "What are some of the challenges facing nationalism in Europe today?",
+    "information": "Some of the challenges facing nationalism in Europe today include the rise of globalization, the European Union, and immigration.",
+    "options": [
+      "The rise of globalization",
+      "The European Union",
+      "Immigration",
+      "All of the above"
+    ],
+    "answer": "All of the above"
+  },
+  {
+    "question": "What is the future of nationalism in Europe?",
+    "information": "The future of nationalism in Europe is uncertain.",
+    "options": [
+      "The future of nationalism in Europe is uncertain",
+      "Nationalism will continue to be a major force in Europe",
+      "Nationalism will decline in importance in Europe",
+      "Nationalism will disappear from Europe"
+    ],
+    "answer": "The future of nationalism in Europe is uncertain"
+  },
+  {
+    "question": "What are some of the positive aspects of nationalism?",
+    "information": "Some of the positive aspects of nationalism include the promotion of national unity and pride, the preservation of cultural traditions, and the provision of a sense of belonging.",
+    "options": [
+      "The promotion of national unity and pride",
+      "The preservation of cultural traditions",
+      "The provision of a sense of belonging",
+      "All of the above"
+    ],
+    "answer": "All of the above"
+  },
+  {
+    "question": "What are some of the negative aspects of nationalism?",
+    "information": "Some of the negative aspects of nationalism include the promotion of division and conflict, the suppression of minority rights, and the justification of violence.",
+    "options": [
+      "The promotion of division and conflict",
+      "The suppression of minority rights",
+      "The justification of violence",
+      "All of the above"
+    ],
+    "answer": "All of the above"
+  },
+  {
+    "question": "How can we harness the positive aspects of nationalism while mitigating the negative aspects?",
+    "information": "We can harness the positive aspects of nationalism while mitigating the negative aspects by promoting tolerance and understanding, respecting minority rights, and resolving conflicts peacefully.",
+    "options": [
+      "By promoting tolerance and understanding",
+      "By respecting minority rights",
+      "By resolving conflicts peacefully",
+      "All of the above"
+    ],
+    "answer": "All of the above"
+  }
+]
