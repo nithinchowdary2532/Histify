@@ -205,6 +205,8 @@ if uploaded_image is not None:
             summaries = summarize_chunks(chunks)
             aggregated_summary = aggregate_summaries(summaries)
             session_state.data = aggregated_summary
+
+
 if picture:
     st.image(picture)
 if picture is not None:
@@ -242,8 +244,12 @@ if uploaded_file is not None:
             # st.write(aggregated_summary)
 
 if len(session_state.data) > 0:
+
     st.header("Here's a breakdown of all the important information in the uploaded chapter:")
     st.write(session_state.data)
+    st.success('Summary Generated!', icon="✅")
+    if st.button("Click here for Text to Speech"):
+        st.switch_page("pages/Text2Speech.py")
     data = {"information": session_state.data}
 
     if os.path.exists("MainPoints.json"):
@@ -294,6 +300,13 @@ if len(session_state.storyData) > 0:
         st.write(story)
         data.append(subtopic_data)
     export_story_data(data)
+    st.success('Story Generation Successful!', icon="✅")
+    if st.button("Click here for Carousel View"):
+        st.switch_page("pages/Story Time.py")
+    if st.button("Click here for Attempting our Personalized Quiz"):
+        st.switch_page("pages/Quiz.py")
+    if st.button("Have any doubts, reach our to our QuizBot"):
+        st.switch_page("pages/Chat with Us.py")
     # Generate image for the subtopic here using generate_image function
 
 st.sidebar.success("Select a page above.")
