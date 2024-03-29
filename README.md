@@ -67,7 +67,7 @@ An educational platform uses AI to convert textbook content into narrative-drive
 ## Quiz
 - Implements a quiz feature to test students on the chapter they have just learned using interactive learning methods.
 - Utilizes multiple-choice questions (MCQs) format with point-based scoring system for each question.
-- Gamifies the self-evaluation process, encouraging students to improve their performance with each attempt and enhancing engagement in the learning process.
+- Gamifies the self-evaluation process, encouraging students to improve their performance with each attempt and enhancing engagement in learning process.
 
 
 ## Authors 
