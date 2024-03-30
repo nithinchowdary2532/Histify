@@ -76,20 +76,6 @@ An educational platform uses AI to convert textbook content into narrative-drive
   <tr align="left">
    <td>
 
-   #### Meghanand 
-   <p align="center">
-   <img src = "https://raw.githubusercontent.com/Megh-Zyke/Histify/main/images/meghs.jpg"  height="120" alt="Meghanand">
-   </p>
-   <p align="center">
-   <a href = "https://github.com/Megh-Zyke"><img src = "http://www.iconninja.com/files/241/825/211/round-collaboration-social-github-code-circle-network-icon.svg" width="36" height = "36"/></a>
-   <a href = "https://www.linkedin.com/in/meghanandgejjela/">
-   <img src = "http://www.iconninja.com/files/863/607/751/network-linkedin-social-connection-circular-circle-media-icon.svg" width="36" height="36"/>
-   </a>
-   </p>
-    <strong>Python | LLM | AI | Web Dev<strong>
-    </td>
-    <td>
-
 
    #### Anirudh Kavle
    <p align="center">
