@@ -48,12 +48,19 @@ print(title)
 
 # Fetch the quiz data only once
 
-def generate_quiz_data(topic):
-    data = llm_chain.run(topic= topic)
-    quiz_data = json.loads(data)
+def generate_quiz_data(title):
+    json_file_path = "MainPoints.json"
 
-    with open('quiz_data.json', 'w') as f:
-        json.dump(quiz_data, f)
+    if os.path.exists(json_file_path):
+        with open(json_file_path, "r") as json_file:
+            data = json.load(json_file)
+
+        quiz_data = data["information"]
+
+        # Write quiz data to a separate JSON file
+        quiz_file_path = f"quiz_data/{title}_quiz.json"
+        with open('quiz_data.json', "w") as quiz_file:
+            json.dump(quiz_data, quiz_file)
 
 
 
