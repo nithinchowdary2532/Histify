@@ -27,7 +27,7 @@ if not firebase_admin._apps:
     firebase_admin.initialize_app(cred)
 
 db = firestore.client()
-
+#firebase
 page_bg_img="""
 <style>
 [data-testid="stApp"] {
